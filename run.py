@@ -78,7 +78,7 @@ main()
 
 
 
-
+# note to self on code used: always check if input method used to ensure \n used where input will be entered before"
 
 
 # Testing opening_page() function

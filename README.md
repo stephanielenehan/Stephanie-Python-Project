@@ -31,4 +31,15 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 Happy coding!
 
+Note to self: General Dev issue and how I reolved / dealt with: 
+E.G. Workspace became unavailable due to issue outside my control.
+ - Is there something I can do to resolve the actual issue for myself? - No. 
+
+ - Is there a work around I can pull together to resolve (even temporarily) the issue for myself? - Yes
+    - By using the CI Students workspace on Gitpod as opposed to my own Gitpod hours by default I left myself with the full 50 hrs of my own Gitpod free allocation. Downside I had to reinstall my creds.json and dependencies like gspread and google-auth but it worked. 
+ 
+ - If there was no feasible timely workaround until the workspace access issue was reolved, 
+    is there anything else I can access and work on? -Yes
+     - The Readme.md file of your Repo can be accessed and edited right on the Github website. (Credit to a previous mentor Malia Havlicek who showed me that trick)
+
 
