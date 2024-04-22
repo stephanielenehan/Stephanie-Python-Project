@@ -31,6 +31,11 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 Happy coding!
 
+
+Deployed Heroku Site for my Project
+https://stephanie-python-project-b041af7a44a3.herokuapp.com/
+
+
 Note to self: General Dev issue and how I reolved / dealt with: 
 E.G. Workspace became unavailable due to issue outside my control.
  - Is there something I can do to resolve the actual issue for myself? - No. 
