@@ -1,65 +1,106 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('stephanie-python-project')
-
-#sales = SHEET.worksheet('sales')
-#data = sales.get_all_values()
-#print(data)
+    "https://www.googleapis.com/auth/drive" 
+    ] 
 
 
-# example function
-def get_sales_data():
-    """
-    Get sales figures from the user
-    """
-    print("Please enter sales data from the last market.")
-    print("Data should be six numbers, separated by commas.")
-    print("Example: 10,20,30,40,50,60\n")
+CREDS = Credentials.from_service_account_file ('creds.json')
+SCOPED_CREDS = CREDS.with_scopes (SCOPE)
+GSPREAD_CLIENT = gspread.authorize (SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open ('stephanie-python-project')
 
-    data_str = input("Enter your data here: ")
-    print(f"The data provided is: {data_str}")
 
 def opening_page():
     """
     Function to display welcome to the user, 
     describe the program & time required to the user and
     ask the user if they are ready to proceed? 
-    or exit if they do not wish to proceed
     """
     while True:
         print ("\nWelcome To Your Daily Meal & Ingredients Planner.\n")
-        print ("This is a short Python program that will show you a shopping")
-        print("list of ingredients based on your meal choices for tomorrow.\n")
+        print ("This is a short Python program that will give you a")
+        print("list of ingredients to go & buy (or check you already have)") 
+        print ("based on your meal choices.\n")
         print ("It will take approx. 5 mins\n")
         print ("Are you ready to do this now? Y = Yes  N = No\n")
         user_decision = input ("Enter: \n")
-        user_decision = user_decision.strip() # remove whitespace before &/or after user input
-        if user_decision == "Y" or user_decision == "y": # allow uppercase or lowercase Y/y
-            print("------------------------------") # 30 * - character
+        user_decision = user_decision.strip() 
+        # remove whitespace before &/or after user input
+        if user_decision == "Y" or user_decision == "y": 
+            # allow uppercase or lowercase Y/y
+            print("------------------------------------------------------------") 
             print("\nGreat, Let's Go!\n")
             break
-        elif user_decision == "N" or user_decision == "n": # allow uppercase or lowercase N/n
-            ("------------------------------") # 30 * - character
+        elif user_decision == "N" or user_decision == "n": 
+            # allow uppercase or lowercase N/n
+            ("--------------------------------------------------") 
             print("\nOK, See You Later. Bye!")
+            print("--------------------------------------------------") 
             break
+            return opening_page()
         else:
             print ("\nPlease Try Again")
             print ("\nOnly Enter Y or N")
-            print("------------------------------") # 30 * - character
-            return opening_page()         
+            print("--------------------------------------------------")
+            return opening_page()  
+
+
+def meal_choices():
+    """
+    Function to provide user with available meal choices,
+    Ask the user to make meal choices
+    """
+    while True:
+        print ("Here are your meal choices\n")
+        print ("Please pick the meal you wish to select\n")
+        print ("\nFor Meal A : Omlette Enter A\n") 
+        print ("\nFor Meal B : Beans on Toast Enter B\n")
+        print ("\nFor Meal C : Salmon Dinner Enter C\n")
+        print ("\nTo change your mind Enter N (for No)")
+        user_meal_choice = input ("Enter: \n")
+        user_meal_choice = user_meal_choice.strip() 
+        # remove whitespace before &/or after user input
+        if  user_meal_choice== "A" or user_meal_choice == "a": 
+            # allow uppercase or lowercase A/a
+            print("--------------------------------------------------") 
+            print("\nAn Omlette it is!\n")
+            print("\nYou will need:")
+            print("\nEggs, Sunflower Oil & Butter")
+            print("\nENJOY!")
+            break
+        if  user_meal_choice== "B" or user_meal_choice == "b": 
+            # allow uppercase or lowercase B/b
+            print("--------------------------------------------------") 
+            print("\nBeans on Toast it is!\n")
+            print("\nYou will need:")
+            print("\nSliced Pan Bread, Tin of Baked Beans & Butter")
+            print("\nENJOY!")
+            break
+        if  user_meal_choice== "C" or user_meal_choice == "c": 
+            # allow uppercase or lowercase C/c
+            print("--------------------------------------------------")
+            print("\nSalmon it is!\n")
+            print("\nYou will need:")
+            print("\nSalmon Darne, Potatoes & Tin of Corn")
+            print("\nENJOY!")
+            break
+        elif user_decision == "N" or user_decision == "n": 
+            # allow uppercase or lowercase N/n
+            print("--------------------------------------------------") 
+            print("\nOK, See You Later. Bye!")
+            print("--------------------------------------------------")
+            break
+            return opening_page()
+        else:
+            print ("\nPlease Try Again")
+            print ("\nOnly Enter A, B, C or N")
+            print("--------------------------------------------------")
+            return meal_choices()
 
 
 def main():
@@ -67,24 +108,6 @@ def main():
     Run all program functions
     """
     opening_page()
-
+    meal_choices()
 
 main()
-
-
-
-
-
-
-
-
-# note to self on code used: always check if input method used to ensure \n used where input will be entered before"
-
-
-# Testing opening_page() function
-# Capital Y 
-# Lowercase y 
-# Capital N 
-# Lowercase n  
-# White Space before &/or after 
-# Invalid input 
