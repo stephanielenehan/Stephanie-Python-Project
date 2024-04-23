@@ -61,7 +61,7 @@ def meal_choices():
         print ("\nFor Meal A : Omlette Enter A\n") 
         print ("\nFor Meal B : Beans on Toast Enter B\n")
         print ("\nFor Meal C : Salmon Dinner Enter C\n")
-        print ("\nTo change your mind Enter N (for No)")
+        print ("\nTo change your mind Enter N (for No)\n")
         user_meal_choice = input ("Enter: \n")
         user_meal_choice = user_meal_choice.strip() 
         # remove whitespace before &/or after user input
