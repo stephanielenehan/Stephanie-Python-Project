@@ -73,7 +73,7 @@ The page should automatically refresh with a url displayed
 Test the link by clicking on the url
 
 ## Forking
-Navigate to the repo pizzas
+Navigate to the repo.
 Click the 'Fork' button on the upper right part of the page.
 You will now have a fork of my repository added to your GitHub profile.
 
